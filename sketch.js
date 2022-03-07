@@ -7,12 +7,12 @@ let fr = 20; //starting FPS
 let clr;
 let myLeaves =  [];
 let value = '#B2D8E6';
+let sketchStarted = false;
 
 function setup() {  
   createCanvas(500, 500);
 
-  mic = new p5.AudioIn();  //Create Audio Input
-  mic.start(); //Start Audio Input
+ createButton("Start").mousePressed(startSketch);
   
   //FrameRate-Cubes
   frameRate(fr); 
@@ -42,7 +42,16 @@ function setup() {
   }
 }
 
+function startSketch() {
+  mic = new p5.AudioIn();  //Create Audio Input
+  mic.start(); //Start Audio Input
+  sketchStarted = true;
+}
+
 function draw() {
+	
+  if(sketchStarted) {
+	  
   createCanvas(500, 500);
   background(value);
     
@@ -81,6 +90,7 @@ function draw() {
   drawNose();
   drawMouth();
   drawBlush();
+  }
 }
 
 function TailMouseMovement () {
