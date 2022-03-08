@@ -45,6 +45,7 @@ function setup() {
 function startSketch() {
   mic = new p5.AudioIn();  //Create Audio Input
   mic.start(); //Start Audio Input
+	
   sketchStarted = true;
 }
 
@@ -90,7 +91,6 @@ function draw() {
   drawNose();
   drawMouth();
   drawBlush();
-  }
 }
 
 function TailMouseMovement () {
