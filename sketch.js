@@ -62,6 +62,8 @@ function draw() {
     myLeaves[i].move();
   }
 
+  micLevel = mic.getLevel(0.9);
+	  
   //Movements
   TailMouseMovement();
   MicMovement();
@@ -91,6 +93,7 @@ function draw() {
   drawNose();
   drawMouth();
   drawBlush();
+  }
 }
 
 function TailMouseMovement () {
